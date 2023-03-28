@@ -1,0 +1,23 @@
+<div class="column justify-center align-center container">
+    <div class="row">
+        <p class="margin-h">Player One: {{ player1.points }}</p>
+        <p class="margin-h">Draws: {{ draws }}</p>
+        <p class="margin-h">Player One: {{ player2.points }}</p>
+    </div>
+    <h1>Active player: {{ activePlayer.name }}</h1>
+    <div class="row field-row">
+        <div class="column field justify-center align-center" (click)="playerMove(0)"> {{ board.fields[0] }}</div>
+        <div class="column field justify-center align-center" (click)="playerMove(1)">{{ board.fields[1] }}</div>
+        <div class="column field justify-center align-center" (click)="playerMove(2)">{{ board.fields[2] }}</div>
+    </div>
+    <div class="row field-row">
+        <div class="column field justify-center align-center" (click)="playerMove(3)">{{ board.fields[3] }}</div>
+        <div class="column field justify-center align-center" (click)="playerMove(4)">{{ board.fields[4] }}</div>
+        <div class="column field justify-center align-center" (click)="playerMove(5)">{{ board.fields[5] }}</div>
+    </div>
+    <div class="row field-row">
+        <div class="column field justify-center align-center" (click)="playerMove(6)">{{ board.fields[6] }}</div>
+        <div class="column field justify-center align-center" (click)="playerMove(7)">{{ board.fields[7] }}</div>
+        <div class="column field justify-center align-center" (click)="playerMove(8)">{{ board.fields[8] }}</div>
+    </div>
+</div>

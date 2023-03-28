@@ -1,0 +1,19 @@
+:host {
+  height: 100%;
+}
+
+.field {
+  width: 160px;
+  height: 160px;
+  text-align: center;
+  font-size: 40px;
+  & + & {
+    border-left: 4px solid black;
+  }
+}
+
+.field-row {
+  & + & {
+    border-top: 4px solid black;
+  }
+}

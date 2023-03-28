@@ -1,0 +1,25 @@
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.game-name {
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+.sidebar {
+  width: 300px;
+  border-right: 2px solid #efc531;
+}
+
+.games-list {
+  border-top: 2px solid #efc531;
+  padding-top: 40px;
+}
+
+.active-game {
+  color: #efc531;
+}

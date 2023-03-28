@@ -1,0 +1,22 @@
+<div class="column justify-center align-center container">
+    <div class="row">
+        <p class="margin-h">Player wins: {{ playerWins }}</p>
+        <p class="margin-h">Draws: {{ draws }}</p>
+        <p class="margin-h">Computer wins: {{ computerWins }}</p>
+    </div>
+    <h1 class="row">Choose your item</h1>
+    <div class="row">
+        <img class="item_icon margin-h" [ngClass]="[playerOptions == 'paper' ? 'selected-item' : 'unselected-item']" [src]="'paper_icon.png' | assetsImages" (click)="playerPick('paper')"/>
+        <img class="item_icon margin-h" [ngClass]="[playerOptions == 'rock' ? 'selected-item' : 'unselected-item']" [src]="'rock_icon.png' | assetsImages" (click)="playerPick('rock')"/>
+        <img class="item_icon margin-h" [ngClass]="[playerOptions == 'scissors' ? 'selected-item' : 'unselected-item']" [src]="'scissors_icon.png' | assetsImages" (click)="playerPick('scissors')"/>
+    </div>
+    <div class="row">
+        <img class="item_icon margin-h" [src]="'versus_icon.png' | assetsImages"/>
+    </div>
+    <div *ngIf="computerOptions" class="row">
+        <img class="item_icon margin-h" src="assets/images/{{ computerOptions }}_icon.png"/>
+    </div>
+    <div *ngIf="!computerOptions" class="row">
+        <img class="item_icon margin-h" [src]="'pc_icon.png' | assetsImages"/>
+    </div>
+</div>

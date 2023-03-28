@@ -1,0 +1,17 @@
+:host {
+    height: 100%;
+  }
+  
+.item_icon{
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.unselected-item{
+    filter: brightness(20%);
+  }
+
+.selected-item{
+    filter: brightness(100%);
+}

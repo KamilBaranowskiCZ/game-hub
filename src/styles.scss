@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+html,body{
+    background-color: #353535;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .main{
+      flex: 1
+  }
+  
+  .justify-center{
+      justify-content: center;
+  }
+  
+  .align-center{
+      align-items: center;
+  }
+
+  .yellow-text{
+    color: #EFC531;
+  }
+
+  .margin-h{
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .container{
+    height: 100%;
+    width: 100%;
+  }
