@@ -19,99 +19,89 @@ export class TicTacToeComponent implements OnInit {
     points: 0,
   };
   board: Board = {
-    fields: [null, null, null, 
-      null, null, null, 
+    fields: [null, null, null,
+      null, null, null,
       null, null, null],
   };
   activePlayer: Player = this.player1;
   winConditions = false;
   draws = 0;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   changePlayer() {
-    if(this.activePlayer == this.player1)
-    {
+    if (this.activePlayer == this.player1) {
       this.activePlayer = this.player2;
+    } else {
+      this.activePlayer = this.player1;
     }
-    else{this.activePlayer = this.player1;}
   }
 
-  checkResult() 
-  {
-    if(this.board.fields[0] == this.activePlayer.symbol &&
+  checkResult() {
+    if (this.board.fields[0] == this.activePlayer.symbol &&
       this.board.fields[1] == this.activePlayer.symbol &&
-      this.board.fields[2] == this.activePlayer.symbol)
-      {
+      this.board.fields[2] == this.activePlayer.symbol) {
       this.winConditions = true;
     }
-    if(this.board.fields[3] == this.activePlayer.symbol &&
+    if (this.board.fields[3] == this.activePlayer.symbol &&
       this.board.fields[4] == this.activePlayer.symbol &&
-      this.board.fields[5] == this.activePlayer.symbol)
-      {
+      this.board.fields[5] == this.activePlayer.symbol) {
       this.winConditions = true;
     }
-    if(this.board.fields[6] == this.activePlayer.symbol &&
+    if (this.board.fields[6] == this.activePlayer.symbol &&
       this.board.fields[7] == this.activePlayer.symbol &&
-      this.board.fields[8] == this.activePlayer.symbol)
-      {
+      this.board.fields[8] == this.activePlayer.symbol) {
       this.winConditions = true;
     }
-    if(this.board.fields[0] == this.activePlayer.symbol &&
+    if (this.board.fields[0] == this.activePlayer.symbol &&
       this.board.fields[3] == this.activePlayer.symbol &&
-      this.board.fields[6] == this.activePlayer.symbol)
-      {
+      this.board.fields[6] == this.activePlayer.symbol) {
       this.winConditions = true;
     }
-    if(this.board.fields[1] == this.activePlayer.symbol &&
+    if (this.board.fields[1] == this.activePlayer.symbol &&
       this.board.fields[4] == this.activePlayer.symbol &&
-      this.board.fields[7] == this.activePlayer.symbol)
-      {
+      this.board.fields[7] == this.activePlayer.symbol) {
       this.winConditions = true;
     }
-    if(this.board.fields[2] == this.activePlayer.symbol &&
+    if (this.board.fields[2] == this.activePlayer.symbol &&
       this.board.fields[5] == this.activePlayer.symbol &&
-      this.board.fields[8] == this.activePlayer.symbol)
-      {
+      this.board.fields[8] == this.activePlayer.symbol) {
       this.winConditions = true;
     }
-    if(this.board.fields[0] == this.activePlayer.symbol &&
+    if (this.board.fields[0] == this.activePlayer.symbol &&
       this.board.fields[4] == this.activePlayer.symbol &&
-      this.board.fields[8] == this.activePlayer.symbol)
-      {
+      this.board.fields[8] == this.activePlayer.symbol) {
       this.winConditions = true;
     }
-    if(this.board.fields[2] == this.activePlayer.symbol &&
+    if (this.board.fields[2] == this.activePlayer.symbol &&
       this.board.fields[4] == this.activePlayer.symbol &&
-      this.board.fields[6] == this.activePlayer.symbol)
-      {
+      this.board.fields[6] == this.activePlayer.symbol) {
       this.winConditions = true;
     }
   }
 
   nextGame() {
-    this.board.fields = [null, null, null, 
-      null, null, null, 
+    this.board.fields = [null, null, null,
+      null, null, null,
       null, null, null];
     this.winConditions = false;
   }
 
-  playerMove(fieldNumber: number) 
-  {
-    if(this.board.fields[fieldNumber]){
-      return
+  playerMove(fieldNumber: number) {
+    if (this.board.fields[fieldNumber]) {
+      return;
     }
     this.board.fields[fieldNumber] = this.activePlayer.symbol;
     this.checkResult();
-    if(this.winConditions){
+    if (this.winConditions) {
       this.activePlayer.points += 1;
       setTimeout(() => {
         this.nextGame();
       }, 0);
     }
-    if(!this.board.fields.includes(null) && !this.winConditions){
+    if (!this.board.fields.includes(null) && !this.winConditions) {
       this.draws += 1;
       setTimeout(() => {
         this.nextGame();
@@ -120,4 +110,3 @@ export class TicTacToeComponent implements OnInit {
     this.changePlayer();
   }
 }
-  
